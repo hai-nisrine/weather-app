@@ -4,6 +4,7 @@ const temperatureEl = document.querySelector("#temperature-el")
 const apparentTempEl = document.querySelector("#apparent-temperature-el")
 const weatherCodeEl = document.querySelector("#weather-code-el")
 const searchBtn = document.querySelector("#search-btn")
+const resultEl = document.querySelector("#result")
 
 
 async function fetchData(city) {
@@ -43,6 +44,9 @@ async function fetchData(city) {
         const isDay = weatherData.current.is_day
         const description = weatherCodes[code][isDay]
         weatherCodeEl.textContent = description
+
+        resultEl.classList.toggle("day-mode", isDay === 1)
+        resultEl.classList.toggle("night-mode", isDay === 0)
         
 
         
