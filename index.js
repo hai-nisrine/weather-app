@@ -1,6 +1,8 @@
 const inputEl = document.querySelector("#input-el")
 const cityEl = document.querySelector("#city-el")
 const temperatureEl = document.querySelector("#temperature-el")
+const apparentTempEl = document.querySelector("#apparent-temperature-el")
+const weatherCodeEl = document.querySelector("#weather-code-el")
 const searchBtn = document.querySelector("#search-btn")
 
 
@@ -25,7 +27,7 @@ async function fetchData(city) {
 
 
         //get city weather 
-        const weatherResponse = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`)
+        const weatherResponse = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature,weather_code,is_day`)
 
         if (!weatherResponse.ok) {
             throw new Error("Could not fetch weather")
@@ -35,7 +37,15 @@ async function fetchData(city) {
 
 
         cityEl.textContent = name;
-        temperatureEl.textContent = weatherData.current_weather.temperature
+        temperatureEl.textContent = weatherData.current.temperature_2m + "℃"
+        apparentTempEl.textContent = "Feels like: " + weatherData.current.apparent_temperature +"℃"
+        const code = weatherData.current.weather_code
+        const isDay = weatherData.current.is_day
+        const description = weatherCodes[code][isDay]
+        weatherCodeEl.textContent = description
+        
+
+        
        
     } catch(error) {
         console.log(error)

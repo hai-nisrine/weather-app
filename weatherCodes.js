@@ -1,0 +1,23 @@
+const weatherCodes = {
+    0: { 1: "☀️ Sunny", 0: "🌙 Clear" },
+    1: { 1: "🌤️ Mainly sunny", 0: "🌙 Mainly clear" },
+    2: { 1: "⛅ Partly cloudy", 0: "☁️ Partly cloudy" },
+    3: { 1: "☁️ Overcast", 0: "☁️ Overcast" },
+    45: { 1: "🌫️ Fog", 0: "🌫️ Fog" },
+    48: { 1: "🌫️ Rime fog", 0: "🌫️ Rime fog" },
+    51: { 1: "🌦️ Light drizzle", 0: "🌧️ Light drizzle" },
+    53: { 1: "🌦️ Moderate drizzle", 0: "🌧️ Moderate drizzle" },
+    55: { 1: "🌧️ Dense drizzle", 0: "🌧️ Dense drizzle" },
+    61: { 1: "🌧️ Slight rain", 0: "🌧️ Slight rain" },
+    63: { 1: "🌧️ Moderate rain", 0: "🌧️ Moderate rain" },
+    65: { 1: "🌧️ Heavy rain", 0: "🌧️ Heavy rain" },
+    71: { 1: "🌨️ Slight snow fall", 0: "🌨️ Slight snow fall" },
+    73: { 1: "🌨️ Moderate snow fall", 0: "🌨️ Moderate snow fall" },
+    75: { 1: "❄️ Heavy snow fall", 0: "❄️ Heavy snow fall" },
+    80: { 1: "🌦️ Slight rain showers", 0: "🌧️ Slight rain showers" },
+    81: { 1: "🌧️ Moderate rain showers", 0: "🌧️ Moderate rain showers" },
+    82: { 1: "⛈️ Violent rain showers", 0: "⛈️ Violent rain showers" },
+    95: { 1: "⛈️ Thunderstorm", 0: "⛈️ Thunderstorm" },
+    96: { 1: "⛈️ Thunderstorm with slight hail", 0: "⛈️ Thunderstorm with slight hail" },
+    99: { 1: "⛈️ Thunderstorm with heavy hail", 0: "⛈️ Thunderstorm with heavy hail" }
+}

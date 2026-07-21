@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <label>Enter a City:</label>
+    <label>Weather Forecast</label>
     <div class="search-box">
-    <input type="text" id="input-el">
+    <input type="text" id="input-el" placeholder="Enter a city">
     <button id="search-btn">SEARCH</button>
     </div>
 
     <div id="result">
         <h2 id="city-el"></h2>
         <p id="temperature-el"></p>
+        <p id="apparent-temperature-el"></p>
+        <p id="weather-code-el"></p>
 
     </div>
+    <script src="weatherCodes.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
