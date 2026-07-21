@@ -5,6 +5,12 @@ const apparentTempEl = document.querySelector("#apparent-temperature-el")
 const weatherCodeEl = document.querySelector("#weather-code-el")
 const searchBtn = document.querySelector("#search-btn")
 const resultEl = document.querySelector("#result")
+const lastCity = localStorage.getItem("lastCity")
+
+if (lastCity) {
+    inputEl.value = lastCity
+    fetchData(lastCity)
+}
 
 
 async function fetchData(city) {
@@ -60,6 +66,8 @@ async function fetchData(city) {
 
 searchBtn.addEventListener("click", function() {
     const city = inputEl.value
+
+    localStorage.setItem("lastCity", city)
     fetchData(city)
 
 })
